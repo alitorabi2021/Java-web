@@ -1,0 +1,101 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="heading-lv1">Delete Product</h1>
+    <div class="table-app">
+        <form method="post" th:action="@{/deleteProduct}">
+            <div class="table-handler-dropdown-cell">
+                <label class="dropdown-heading">
+                    <p> Brand: <span class="delete-product" th:text="${delete.brand}" ></span></p>
+                </label>
+            </div>
+
+            <div class="table-handler-dropdown-cell">
+                <label class="dropdown-heading">
+                    <p> Name: <span class="delete-product" th:text="${delete.name}"></span></p>
+                </label>
+            </div>
+
+            <div class="table-handler-dropdown-cell">
+                <label class="dropdown-heading">
+                    <p> Category: <span class="delete-product" th:text="${delete.category}"></span></p>
+                </label>
+            </div>
+
+            <div class="table-handler-dropdown-cell">
+                <label class="dropdown-heading">
+                    <p> Price: <span class="delete-product" th:text="${delete.price}"></span></p>
+                </label>
+            </div>
+
+            <div class="table-handler-dropdown-cell">
+                <label class="dropdown-heading">
+                    <p> Status: <span class="delete-product" th:text="${delete.status}"></span></p>
+                </label>
+                <input type="hidden" id="id" name="id" th:value="${delete.id}">
+            </div>
+
+            <div class="table-handler">
+                <label>Are you sure?</label>
+                <button type="submit"><i class="fa fa-trash"></i> Yes</button>
+                <a th:href="@{/}"><button type="button"><i class="fa fa-times"></i> No</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: white;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #f2f2f2;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .heading-lv1 {
+        color: blue;
+        text-align: center;
+        font-size: 32px;
+    }
+    .select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        border: 1px solid grey;
+    }
+    .button {
+        width: 100%;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+    .button:hover {
+        background-color: darkblue;
+    }
+    .dropdown-heading {
+        color: blue;
+        font-size: 20px;
+    }
+    .delete-product {
+        color: black;
+        font-size: 16px;
+    }
+</style>

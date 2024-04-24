@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Page</title>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+<div class="message">
+    <h1>403</h1>
+    <h3>Page is Forbidden</h3>
+    <h2>Sorry, you don't have permission to access this page!.</h2>
+    <!-- use window.history.back(); to go back -->
+    <button onclick="goBack()"> Go Back</a></button>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    function goBack(){
+        window.location='/login';
+    }
+</script>
+<style>body {
+    height: 100vh;
+    margin: 0;
+    background: #FFF; /* بک‌گراند سفید */
+    color: #0077cc; /* رنگ آبی پررنگ برای متن‌ها */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.message {
+    text-align: center;
+}
+
+.message h1,
+.message h2,
+.message h3 {
+    margin: 0;
+}
+
+.message h1 {
+    font-weight: 700;
+    color: #03DAC6;
+    font-size: 8em;
+}
+
+.message h2, .message h3 {
+    font-weight: 500;
+    color: #0077cc; /* رنگ آبی پررنگ برای متن‌ها */
+}
+
+.message h2 {
+    margin: 30px 0;
+}
+
+.message h3 {
+    font-size: 2.5em;
+}
+
+button {
+    background: transparent;
+    border: 2px solid #0077cc; /* رنگ آبی پررنگ برای حاشیه دکمه */
+    color: #0077cc; /* رنگ آبی پررنگ برای متن دکمه */
+    padding: 10px 20px;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #03DAC6;
+    border-color: #03DAC6;
+    color: #FFF;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+</style>

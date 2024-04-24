@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div>
+<h2 sec:authorize="!isAuthenticated()">
+    <a class="a" href="/login">Page Login</a>
+</h2>
+</div>
+<div class="dropdown" sec:authorize="isAuthenticated()">
+    <button style='font-size:24px'><i class="fa fa-user-circle"></i></button>
+
+    <div class="dropdown-content">
+        <a th:href="@{/profile}">Profile</a>
+    </div>
+</div>
+
+<div align="center">
+    <br>
+    <div sec:authorize="isAuthenticated()">
+        <span>Welcome, [[${#request.userPrincipal.principal.name}]]!</span>
+    </div>
+    <br>
+    <div  sec:authorize="hasAnyAuthority('ADMIN','EDITOR','USER','SELLER')"  >
+        <p>Your role(s):
+            <span
+                  th:each="authority : ${#authentication.getAuthorities()}"
+                  th:text="${authority.getAuthority()}">
+
+            </span>
+        </p>
+    </div>
+
+</div>
+<div class="container">
+    <h1 class="heading-lv1">Products</h1>
+
+    <div class="table-app" id="product-table-app">
+        <div sec:authorize="hasAnyAuthority('ADMIN','SELLER','EDITOR')" class="new-product" >
+            <a href="/addProduct"><i class="fa fa-plus"></i>New Product</a>
+        </div>
+        <div>&nbsp; </div>
+        <div align="center">
+        <form th:action="@{/page/1}">
+            <input type="hidden" name="sortFiled" th:value="${sortFiled}">
+            <input type="hidden" name="sortDir" th:value="${sortDir}">
+            Filter:
+            <input type="text" name="keyword" th:value="${keyword}" required>
+            &nbsp;
+            <input type="submit" value="Search">
+            &nbsp;
+            <input type="button" value="Clear" onclick="clearFilter()">
+        </form>
+       </div>
+        <div>&nbsp; </div>
+        <script type="text/javascript">
+            function clearFilter(){
+                window.location='/';
+            }
+        </script>
+
+        <div class="table-wrapper" >
+            <table class="table" id="table">
+                <thead>
+                <tr class="table-head">
+                    <th class="table-cell align-right">
+                        <a class="a"
+                                th:href="@{'/page/' + ${currentPage} +'?sortFiled=id&sortDir=' + ${reverseSortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">ID</a>
+                    </th>
+                    <th class="table-cell align-left">
+                        <a class="a"
+                                th:href="@{'/page/' + ${currentPage} +'?sortFiled=brand&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword: ''}}">Brand</a>
+                    </th>
+                    <th class="table-cell align-left">
+                        <a class="a"
+                                th:href="@{'/page/' + ${currentPage} +'?sortFiled=name&sortDir=' + ${reverseSortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">Name</a>
+                    </th>
+                    <th class="table-cell align-left">
+                        <a class="a"
+                           th:href="@{'/page/' + ${currentPage} +'?sortFiled=category&sortDir=' + ${reverseSortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">
+                            Category</a></th>
+                    <th class="table-cell align-left">  <a class="a"
+                        th:href="@{'/page/' + ${currentPage} +'?sortFiled=price&sortDir=' + ${reverseSortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">
+                        Price</a></th>
+                    <th class="table-cell align-left">  <a class="a"
+                   th:href="@{'/page/' + ${currentPage} +'?sortFiled=status&sortDir=' + ${reverseSortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">
+                        Status</a></th>
+                    <th class="table-cell align-left">  <a class="a"
+                      th:href="@{'/page/' + ${currentPage} +'?sortFiled=createAt&sortDir=' + ${reverseSortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">
+                        Created At</a></th>
+                    <th sec:authorize="hasAnyAuthority('ADMIN','EDITOR')"  class="table-cell align-left">Update Product</th>
+                    <th sec:authorize="hasAuthority('ADMIN')"  class="table-cell align-left">Delete Product</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-head" th:each="pro : ${products}">
+                    <td class="table-cell align-left" th:text="${pro.id}">ID</td>
+                    <td class="table-cell align-left" th:text="${pro.brand}">Brand</td>
+                    <td class="table-cell align-left" th:text="${pro.name}">Name</td>
+                    <td class="table-cell align-left" th:text="${pro.category}">Category</td>
+                    <td class="table-cell align-left" th:text="${pro.price}">Price</td>
+                    <td class="table-cell align-left" th:text="${pro.status}">Status</td>
+                    <td class="table-cell align-left" th:text="${pro.createAt}">Created at</td>
+                    <td sec:authorize="hasAnyAuthority('ADMIN','EDITOR')" class="table-cell align-left"><a
+                            th:href="@{/edit/{id}(id=${pro.id})}" style="font-weight: bold; color: blue;"><i class="fa fa-pencil">
+                    </i>Edit</a></td>
+                    <td sec:authorize="hasAuthority('ADMIN')"  class="table-cell align-left">
+                        <a th:href="@{/delete/{id}(id=${pro.id})}" style="font-weight: bold; color: red;"><i class="fa fa-trash">
+                    </i>Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div>&nbsp;</div>
+            <div class="page-product">
+                Total Items: [[${items}]] -Page [[${currentPage}]] of [[${totalPage}]]
+                &nbsp; - &nbsp;&nbsp;
+                <a class="page-product::after" th:if="${currentPage > 1}" th:href="@{'/page/1?sortFiled='+ ${sortFiled} +'&sortDir=' + ${sortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">First</a>
+                <span th:unless="${currentPage > 1}" th:href="@{/page/1}">First</span>
+                &nbsp;&nbsp;
+                <a th:if="${currentPage > 1}" th:href="@{'/page/' + ${currentPage - 1}+'?sortFiled='+ ${sortFiled} +'&sortDir=' + ${sortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">Previous</a>
+                <span th:unless="${currentPage > 1}">Previous</span>
+                &nbsp;&nbsp;
+                <span th:each="i: ${#numbers.sequence(1,totalPage)}">
+                    <a th:if="${i != currentPage and i != 0}" th:href="@{'/page/' + ${i} +'?sortFiled='+ ${sortFiled} +'&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword: ''}}">[[${i}]]</a>
+                    <span th:unless="${i != currentPage}"> [[${i}]]</span>&nbsp;&nbsp;
+                </span>
+                &nbsp;&nbsp;
+                <a th:if="${currentPage < totalPage}" th:href="@{'/page/' + ${currentPage + 1}+'?sortFiled='+ ${sortFiled} +'&sortDir=' + ${sortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">Next</a>
+                <span th:unless="${currentPage < totalPage}">Next</span>
+                &nbsp;&nbsp;
+                <a th:if="${currentPage <totalPage}" th:href="@{'/page/' + ${totalPage} +'?sortFiled='+ ${sortFiled} +'&sortDir=' + ${sortDir}+ ${keyword != null ? '&keyword=' + keyword: ''}}">Last</a>
+                <span th:unless="${currentPage < totalPage}">Last</span>
+            </div>
+            <div class="no-results hidden" id="no-results">
+                <p class="no-results-message">No results found.</p>
+            </div>
+            <!-- /#no-results -->
+        </div>
+        <!-- /.table-wrapper -->
+    </div>
+    <!-- /.table-app -->
+</div>
+<!-- /.container -->
+</body>
+
+</html>
+<style>
+    :root {
+        --colorForeground: #111;
+        --colorGray01: #20232a;
+        --colorGray02: rgb(146, 146, 146);
+        --colorGray03: #ccc;
+        --colorGray04: #eee;
+        --colorGray05: #f8f8f8;
+        --colorBackground: #fff;
+        --colorPrimary: #1d4ed8;
+    }
+
+    /* base */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        overscroll-behavior-y: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        background-color: var(--colorBackground);
+    }
+
+    a {
+        color: var(--colorForeground);
+        text-decoration: none;
+    }
+
+    select {
+        font-family: inherit;
+    }
+
+    /* utils */
+    .align-left {
+        text-align: left;
+    }
+
+    .align-center {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .align-right {
+        text-align: right;
+        font-size: 18px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .mb20 {
+        margin-bottom: 20px;
+    }
+
+    /* texts */
+    .light-text {
+        color: var(--colorGray02);
+    }
+
+    /* button */
+    .button {
+        padding: 0 20px;
+        font-size: 16px;
+        line-height: 32px;
+        color: var(--colorBackground);
+        cursor: pointer;
+        background-color: var(--colorForeground);
+        border: 1px solid var(--colorForeground);
+        border-radius: 3px;
+        transition: all 0.2s;
+    }
+
+    .button:hover {
+        color: var(--colorForeground);
+        background-color: var(--colorBackground);
+    }
+
+    .button.secondary {
+        color: var(--colorGray02);
+        background-color: var(--colorBackground);
+        border: 1px solid var(--colorGray03);
+    }
+
+    .button.secondary:hover {
+        color: var(--colorForeground);
+        background-color: var(--colorBackground);
+        border: 1px solid var(--colorForeground);
+    }
+
+    /* heading */
+    .heading-lv1 {
+        margin-bottom: 26px;
+        font-size: 36px;
+        font-weight: bold;
+        color: var(--colorPrimary);
+    }
+
+    /* dropdown */
+    .dropdown-heading {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: var(--colorGray02);
+    }
+
+    .select {
+        padding-top: 0;
+        padding-right: 40px;
+        padding-bottom: 0;
+        padding-left: 10px;
+        font-size: 14px;
+        line-height: 2;
+        cursor: pointer;
+        background-color: var(--colorBackground);
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 10px 10px;
+        border: 1px solid var(--colorGray03);
+        border-radius: 5px;
+        transition: all 0.2s ease-out;
+        appearance: none;
+    }
+
+    .select:hover {
+        border: 1px solid var(--colorGray02);
+    }
+
+    .select:active,
+    .select:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--colorPrimary);
+    }
+
+    /* layouts */
+    .container {
+        max-width: 1000px;
+        padding-top: 20px;
+        padding-right: 24px;
+        padding-left: 24px;
+        margin: 0 auto;
+    }
+
+    /* table */
+    .table-app {
+        min-width: 700px;
+    }
+
+    .table-handler {
+        margin-bottom: 16px;
+    }
+
+    .table-handler > * {
+        display: inline-block;
+    }
+
+    .table-handler-dropdown-cell {
+        padding-right: 16px;
+    }
+
+    .table-wrapper {
+        height: 70vh;
+        overflow-y: scroll;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table-head {
+        line-height: 48px;
+    }
+
+    .table-head th {
+        position: sticky;
+        top: 0;
+        font-weight: bold;
+        color: var(--colorPrimary);
+        background-color: var(--colorBackground);
+        box-shadow: 0 2px 0 0 var(--colorPrimary);
+    }
+
+    .table-row {
+        line-height: 48px;
+        color: var(--colorForeground);
+    }
+
+    .table-row:nth-child(even) {
+        background-color: var(--colorGray05);
+    }
+
+    .table-row:nth-child(odd) {
+        background-color: var(--colorGray04);
+    }
+
+    .table-cell {
+        padding: 0 8px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+
+    .no-results {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .no-results-message {
+        font-size: 22px;
+        color: var(--colorGray02);
+    }
+    .a{
+        color: blue;
+    }
+    .a:hover{
+        color: red;
+    }
+
+    .new-product a {
+        float: right;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: blue;
+    }
+
+    .new-product a:hover {
+        color: red;
+    }
+
+    .new-product a i {
+        margin-right: 5px;
+    }
+
+    .page-product a {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: blue;
+    }
+
+    .page-product a:hover {
+        color: red;
+    }
+
+    .page-product a i {
+        margin-right: 5px;
+    }
+
+    .profile-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .profile-icon {
+        cursor: pointer;
+    }
+
+    .profile-icon i {
+        transform: rotateY(180deg);
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 4px;
+        display: none;
+    }
+
+    .dropdown-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-menu ul li {
+        padding: 8px 0;
+    }
+
+    .dropdown-menu ul li a {
+        color: #111;
+        text-decoration: none;
+    }
+
+    .dropdown-menu ul li a:hover {
+        color: #1d4ed8;
+    }
+
+    .profile-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .page-product {
+        /* تنظیمات پس زمینه */
+        background-color: #F0F0F0;
+        /* تنظیمات حاشیه (margin) و فاصله داخلی (padding) */
+        margin: 10px;
+        padding: 10px;
+        /* تنظیمات حاشیه گوشه ها */
+        border-radius: 5px;
+        /* تنظیمات رنگ متن */
+        color: #333;
+        /* تنظیمات فونت و اندازه آن */
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+    .page-product::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        margin-top: 10px; /* حاشیه بالایی (حاشیه بین اس پن و خط) */
+        margin-bottom: 10px; /* حاشیه پایین (حاشیه بین اس پن ها) */
+        border-bottom: 1px solid #ccc; /* حاشیه پایینی (حاشیه بین اس پن و خط) */
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .btn {
+        font-size: 30px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 120px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>

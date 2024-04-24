@@ -1,0 +1,86 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Product</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="heading-lv1">New Product</h1>
+    <div class="table-app">
+        <form action="#" th:action="@{/save}" method="post">
+            <div class="table-handler-dropdown-cell">
+                <label for="brand" class="dropdown-heading">Brand</label>
+                <input type="text" id="brand" name="brand"
+                       class="select"  required >
+            </div>
+            <div class="table-handler-dropdown-cell">
+                <label for="name" class="dropdown-heading">Name</label>
+                <input type="text" id="name" name="name"
+                       class="select"  required  >
+            </div>
+            <div class="table-handler-dropdown-cell">
+                <label for="category" class="dropdown-heading">Category</label>
+                <input type="text" id="category" name="category"
+                       class="select"  required   >
+            </div>
+            <div class="table-handler-dropdown-cell">
+                <label for="price" class="dropdown-heading">Price</label>
+                <input type="number" id="price" name="price"
+                       class="select"  required   >
+            </div>
+            <div class="table-handler-dropdown-cell">
+                <label for="status" class="dropdown-heading">Status</label>
+                <input type="text" id="status" name="status"
+                       class="select"  required   >
+            </div>
+            <input type="hidden" id="id" name="id">
+            <div class="table-handler">
+                <button class="button" type="submit" value="Save">Add Product</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: white;
+    }
+    .container {
+        max-width: 600px;
+        margin : 0 auto;
+        background: #f2f2f2;
+        padding:20px;
+        border-radius: 5px;
+    }
+    .heading-lv1 {
+        color: blue;
+        text-align: center;
+    }
+    .select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid grey;
+    }
+    .button {
+        width: 100%;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+    .button:hover {
+        background-color: darkblue;
+    }
+    .dropdown-heading {
+        color: blue;
+    }
+</style>

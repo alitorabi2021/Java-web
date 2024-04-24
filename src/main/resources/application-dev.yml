@@ -1,0 +1,48 @@
+spring:
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    username: postgres
+    password: #your password postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+
+            scope:
+              - email
+              - profile
+
+  main:
+    allow-circular-references: true
+
+  mail:
+    host: smtp.gmail.com
+    password: #Featured Passwords
+    username: #enter your email
+    port: 587
+    properties:
+      mail:
+        smtp:
+          connectionTimeout: 500
+          timeout: 3000
+          writeTimeout: 5000
+          auth: true
+          starttls:
+            enable: true
+
+
+
+
+
+

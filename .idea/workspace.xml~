@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="da7055fb-4fee-4605-a9be-4102dd3ec63d" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="EndpointsView">
+    <option name="showSidePanel" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Sass File" />
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="AnnotationType" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PATH_TO_GIT" value="F:\drive D\code\myProject\.gitignore" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\New folder\apache-maven-3.8.8" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2YFGb4yJvHg4YLJ7Ny694wtLjLu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MyProjectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ToolWindowDebug.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/drive D/code/new folder/microService-parent&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;Sass&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4484187ceb5ef7c04e92c6756218c813&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.myproject.model" />
+      <recent name="com.example.myproject.service" />
+      <recent name="com.example.myproject.security.beforeSecurity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\new folder\myProject\src\main\java\com\example\myproject" />
+      <recent name="D:\code\new folder\myProject\src\main\resources\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\javaSpring\myProject\src\main\resources\templates\user" />
+      <recent name="D:\code\new folder\myProject\src\main\resources\templates\error" />
+      <recent name="D:\code\new folder\myProject\src\main\resources\templates" />
+      <recent name="D:\code\new folder\myProject\src\main\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.myproject.controller" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.myproject.controller" />
+      <recent name="com.example.myproject.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MyProjectApplication">
+    <configuration name="MyProjectApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.myproject.controller.userController.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.myproject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.myproject.MyProjectApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.myproject.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.myproject.model" />
+      <option name="MAIN_CLASS_NAME" value="com.example.myproject.model.ProductTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductTests.testCreateProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.myproject.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.myproject.model" />
+      <option name="MAIN_CLASS_NAME" value="com.example.myproject.model.ProductTests" />
+      <option name="METHOD_NAME" value="testCreateProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.findByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.myproject.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.myproject.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.myproject.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="findByEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.registrationUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.myproject.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.myproject.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.myproject.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="registrationUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="myProject" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.myproject.MyProjectApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProductTests.testCreateProduct" />
+        <item itemvalue="JUnit.ProductTests" />
+        <item itemvalue="JUnit.UserServiceTest.registrationUser" />
+        <item itemvalue="JUnit.UserServiceTest.findByEmail" />
+        <item itemvalue="JUnit.MyProjectApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da7055fb-4fee-4605-a9be-4102dd3ec63d" name="Changes" comment="" />
+      <created>1700113984183</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700113984183</updated>
+      <workItem from="1700113985242" duration="2604000" />
+      <workItem from="1700123285266" duration="5227000" />
+      <workItem from="1700181193277" duration="12420000" />
+      <workItem from="1700194718921" duration="642000" />
+      <workItem from="1700204232837" duration="4292000" />
+      <workItem from="1700222961340" duration="854000" />
+      <workItem from="1700234053621" duration="1393000" />
+      <workItem from="1700270917301" duration="715000" />
+      <workItem from="1700271785244" duration="2392000" />
+      <workItem from="1700356779239" duration="9233000" />
+      <workItem from="1700373645506" duration="1289000" />
+      <workItem from="1700385816887" duration="1044000" />
+      <workItem from="1700398804058" duration="8947000" />
+      <workItem from="1700443284758" duration="2970000" />
+      <workItem from="1700446290343" duration="5766000" />
+      <workItem from="1700468496648" duration="5093000" />
+      <workItem from="1700485413995" duration="6506000" />
+      <workItem from="1700529324566" duration="6775000" />
+      <workItem from="1700541701366" duration="6451000" />
+      <workItem from="1700554653075" duration="4347000" />
+      <workItem from="1700575289768" duration="2840000" />
+      <workItem from="1700619295313" duration="8675000" />
+      <workItem from="1700641912170" duration="5972000" />
+      <workItem from="1700658537715" duration="3934000" />
+      <workItem from="1700704674135" duration="11817000" />
+      <workItem from="1700723132846" duration="3391000" />
+      <workItem from="1700768387308" duration="281000" />
+      <workItem from="1700770301137" duration="327000" />
+      <workItem from="1700793794091" duration="9897000" />
+      <workItem from="1700833334114" duration="11040000" />
+      <workItem from="1700874935532" duration="4700000" />
+      <workItem from="1700882666211" duration="2871000" />
+      <workItem from="1700902128346" duration="3032000" />
+      <workItem from="1700923228898" duration="7257000" />
+      <workItem from="1700962511349" duration="9369000" />
+      <workItem from="1700985716656" duration="5307000" />
+      <workItem from="1701014367094" duration="1673000" />
+      <workItem from="1701046906630" duration="10619000" />
+      <workItem from="1701071923253" duration="5341000" />
+      <workItem from="1701096407527" duration="1085000" />
+      <workItem from="1701142346298" duration="1302000" />
+      <workItem from="1701155715321" duration="15757000" />
+      <workItem from="1701219219668" duration="11568000" />
+      <workItem from="1701238325468" duration="6519000" />
+      <workItem from="1701264437391" duration="5609000" />
+      <workItem from="1701306239556" duration="8401000" />
+      <workItem from="1701341690685" duration="6930000" />
+      <workItem from="1701355646302" duration="2026000" />
+      <workItem from="1701392634378" duration="9192000" />
+      <workItem from="1701430669801" duration="2091000" />
+      <workItem from="1701432781234" duration="7389000" />
+      <workItem from="1701446974946" duration="5571000" />
+      <workItem from="1701479892810" duration="8106000" />
+      <workItem from="1701500026270" duration="679000" />
+      <workItem from="1701518111490" duration="6502000" />
+      <workItem from="1701564079219" duration="12748000" />
+      <workItem from="1701617950462" duration="4093000" />
+      <workItem from="1701651833868" duration="6556000" />
+      <workItem from="1701667056694" duration="2771000" />
+      <workItem from="1701689881814" duration="10355000" />
+      <workItem from="1701738062923" duration="17172000" />
+      <workItem from="1701759623199" duration="3541000" />
+      <workItem from="1701829256155" duration="3961000" />
+      <workItem from="1701863868077" duration="6911000" />
+      <workItem from="1701876459061" duration="1221000" />
+      <workItem from="1701899877984" duration="7349000" />
+      <workItem from="1701952280519" duration="1526000" />
+      <workItem from="1702082341829" duration="7055000" />
+      <workItem from="1702130868089" duration="2579000" />
+      <workItem from="1702137165212" duration="1844000" />
+      <workItem from="1702172743940" duration="5547000" />
+      <workItem from="1702197287492" duration="4569000" />
+      <workItem from="1702256604585" duration="8268000" />
+      <workItem from="1702265235658" duration="539000" />
+      <workItem from="1702274723683" duration="2500000" />
+      <workItem from="1702292747932" duration="829000" />
+      <workItem from="1702297338838" duration="1780000" />
+      <workItem from="1702349547802" duration="2429000" />
+      <workItem from="1702358062010" duration="5632000" />
+      <workItem from="1702374036862" duration="3091000" />
+      <workItem from="1702429453831" duration="6419000" />
+      <workItem from="1702510410510" duration="7421000" />
+      <workItem from="1702601757448" duration="6703000" />
+      <workItem from="1702614561420" duration="2735000" />
+      <workItem from="1702618929143" duration="13000" />
+      <workItem from="1702683097989" duration="8828000" />
+      <workItem from="1702695937009" duration="3963000" />
+      <workItem from="1702709586514" duration="1173000" />
+      <workItem from="1702711866168" duration="2911000" />
+      <workItem from="1702815217690" duration="636000" />
+      <workItem from="1702856748676" duration="3007000" />
+      <workItem from="1702878556410" duration="491000" />
+      <workItem from="1702880365754" duration="754000" />
+      <workItem from="1702897470790" duration="632000" />
+      <workItem from="1703064534680" duration="8000" />
+      <workItem from="1703141708632" duration="95000" />
+      <workItem from="1703204288186" duration="4070000" />
+      <workItem from="1703213647184" duration="5647000" />
+      <workItem from="1703223041984" duration="781000" />
+      <workItem from="1703253635424" duration="2506000" />
+      <workItem from="1703322498465" duration="609000" />
+      <workItem from="1703379291421" duration="5928000" />
+      <workItem from="1703401436352" duration="1967000" />
+      <workItem from="1703404729484" duration="33000" />
+      <workItem from="1703407302083" duration="3032000" />
+      <workItem from="1703468840573" duration="297000" />
+      <workItem from="1707543269146" duration="653000" />
+      <workItem from="1707720986710" duration="198000" />
+      <workItem from="1707721218522" duration="25000" />
+      <workItem from="1707721271024" duration="43000" />
+      <workItem from="1707721410795" duration="57000" />
+      <workItem from="1707723064390" duration="126000" />
+      <workItem from="1707813494287" duration="340000" />
+      <workItem from="1707931667324" duration="18000" />
+      <workItem from="1707977737007" duration="66000" />
+      <workItem from="1707979959256" duration="369000" />
+      <workItem from="1707997958164" duration="17000" />
+      <workItem from="1708480726096" duration="671000" />
+      <workItem from="1708512262623" duration="12000" />
+      <workItem from="1708548615521" duration="56000" />
+      <workItem from="1709447500348" duration="2399000" />
+      <workItem from="1709798823726" duration="632000" />
+      <workItem from="1709954561712" duration="2776000" />
+      <workItem from="1709959114642" duration="9992000" />
+      <workItem from="1709978351044" duration="1567000" />
+      <workItem from="1709986558465" duration="3719000" />
+      <workItem from="1710318560957" duration="2079000" />
+      <workItem from="1710421760206" duration="133000" />
+      <workItem from="1710502112268" duration="1211000" />
+      <workItem from="1710527497699" duration="799000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/myProject$MyProjectApplication.ic" NAME="MyProjectApplication Coverage Results" MODIFIED="1701073787619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

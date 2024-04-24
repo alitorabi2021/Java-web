@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body ali>
+<div class="container">
+  <div class="form-group">
+    <div class="content">
+      <label class="label-text">FullName: </label>
+      <br>
+      <span>[[${#request.userPrincipal.principal.name}]]!</span>
+    </div>
+    <a href="#" class="btn-link">edit</a>
+  </div>
+  <div class="form-group">
+    <div class="content">
+      <label class="label-text">Your Email: </label>
+      <br>
+      <span>[[${#request.userPrincipal.principal.getUsername}]]!</span>
+    </div>
+    <a href="/editProfile" class="btn-link">edit
+    </a>
+  </div>
+  <div class="form-group">
+    <div class="content">
+      <label class="label-text">Password: </label>
+      <br>
+      <span>Edit Your Password: </span>
+    </div>
+    <a th:href="@{/change_password_user}" class="btn-link">edit</a>
+  </div>
+  <form name="as" class="logout" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout" />
+  </form>
+  <div >
+    <a  class="btn-link-delete" onclick="showConfirmation()">Delete Account</a>
+  </div>
+</div>
+
+<div id="confirmation-overlay" style="display: none;">
+  <div id="confirmation-popup">
+    <h2>Are you sure you want to delete your account?</h2>
+    <button  onclick="deleteAccount()">Yes</button>
+    <button onclick="hideConfirmation()">No</button>
+  </div>
+</div>
+
+<script>
+  function showConfirmation() {
+    document.getElementById("confirmation-overlay").style.display = "block";
+    document.body.style.overflow = "hidden"; // اضافه کردن استایل برای جلوگیری از اسکرول صفحه اصلی
+  }
+
+  function hideConfirmation() {
+    document.getElementById("confirmation-overlay").style.display = "none";
+    document.body.style.overflow = "auto"; // حذف استایل جلوگیری از اسکرول
+  }
+
+  function deleteAccount() {
+    // اینجا می‌توانید کدی برای حذف اکانت کاربر تعریف کنید
+    alert("Your account has been deleted.");
+    // می‌توانید کاربر را به صفحه دیگری هدایت کنید
+    window.location.href = "/deleteUser";
+  }
+  function deleteAccount2() {
+    // اینجا می‌توانید کدی برای حذف اکانت کاربر تعریف کنید
+    // می‌توانید کاربر را به صفحه دیگری هدایت کنید
+    window.location.href = "/logout";
+
+  }
+</script>
+
+<style>
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid blue; /* اضافه کردن قاب لاگ‌اوت */
+    margin-top: 20px; /* ایجاد فاصله بین قاب و محتوای بالایی */
+    padding-bottom: 20px; /* ایجاد فاصله بین لینک‌ها و اطلاعات پایینی */
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px; /* ایجاد فاصله بین اجزا */
+  }
+
+  .label-text {
+    display: inline-block;
+    width: 100px; /* عرض برای برابری با لینک‌ها */
+  }
+
+  .btn-link {
+    text-decoration: none;
+    color: blue;
+    font-size: 18px; /* افزایش اندازه متن لینک‌ها */
+  }
+
+  .btn-link-delete {
+    text-decoration: none;
+    color: red;
+    margin-left: 280px;
+    font-size: 18px; /* افزایش اندازه متن لینک حذف اکانت */
+  }
+
+  #confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* تغییر رنگ پوشش لایه */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #confirmation-popup {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #333;
+    text-align: center;
+  }
+</style>
+</body>
+</html>
